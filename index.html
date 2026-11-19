@@ -1,0 +1,631 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071426">
+<meta name="description" content="Chowdhury Technology Company - Software, Website Development, Excel Data Entry and Digital Solutions.">
+<title>CTC | Chowdhury Technology Company</title>
+
+<style>
+:root{
+--bg:#061324;--panel:#10243b;--text:#eef7ff;
+--muted:#a9bfd4;--cyan:#39c5f3;--blue:#2585dc;
+--line:rgba(160,195,225,.17);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.7}
+a{text-decoration:none;color:inherit}
+.container{width:min(1150px,92%);margin:auto}
+.topbar{position:sticky;top:0;z-index:100;background:rgba(5,17,32,.96);border-bottom:1px solid var(--line)}
+.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:bold}
+.logo-svg{width:52px;height:52px;flex-shrink:0}
+.brand-name{font-size:14px;letter-spacing:.4px}
+.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px}
+.links{display:flex;gap:18px;font-size:13px;align-items:center}
+.links a:hover{color:var(--cyan)}
+.menu-btn{display:none;background:var(--panel);color:white;border:1px solid var(--line);padding:10px 14px;border-radius:10px}
+.hero{padding:85px 0 75px;background:radial-gradient(circle at 80% 20%,#168bd525,transparent 38%)}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:35px}
+.eyebrow{color:#8cddfb;border:1px solid #39c5f344;padding:7px 13px;border-radius:30px;font-size:12px;display:inline-block}
+h1{font-size:clamp(38px,6vw,65px);line-height:1.15}
+.gradient{background:linear-gradient(90deg,#fff,#72d9ff);background-clip:text;-webkit-background-clip:text;color:transparent}
+.lead{color:var(--muted);font-size:16px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{display:inline-block;padding:12px 19px;border-radius:11px;font-weight:bold;border:1px solid var(--line);cursor:pointer;text-align:center}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#041628;border:none}
+.btn:hover{opacity:.88}
+.hero-card{background:linear-gradient(145deg,#143858,#0c2037);border:1px solid #5bcafa33;border-radius:25px;padding:25px;text-align:center}
+.hero-mark{min-height:230px;border-radius:20px;background:#0b2945;display:grid;place-items:center;padding:20px}
+.hero-mark .logo-svg{width:170px;height:170px}
+.hero-card p{color:var(--muted)}
+section{padding:65px 0}
+.section-head{text-align:center;margin-bottom:35px}
+.kicker{color:var(--cyan);font-size:12px;letter-spacing:2px}
+h2{font-size:clamp(27px,4vw,38px);margin:10px 0}
+.section-head p,.muted{color:var(--muted)}
+.card{background:linear-gradient(145deg,#102640,#0c2036);border:1px solid var(--line);border-radius:18px;padding:23px}
+.card p{color:var(--muted)}
+.about-grid,.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:18px}
+.value{background:#0b1e33;padding:16px;border:1px solid var(--line);border-radius:13px}
+.value b{display:block;color:#b8edff}
+.value span{font-size:13px;color:var(--muted)}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.service-icon{width:48px;height:48px;border-radius:13px;background:#39c5f31a;display:grid;place-items:center;font-size:23px;margin-bottom:14px}
+.service-card{transition:.2s}
+.service-card:hover{border-color:var(--cyan);transform:translateY(-3px)}
+.product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.product-tag{color:#8cddfb;font-size:11px;border:1px solid #39c5f344;padding:4px 10px;border-radius:20px}
+.project-note{border:1px dashed #4b91bd66;border-radius:17px;padding:25px;text-align:center;color:var(--muted)}
+.contact-item{padding:13px 0;border-bottom:1px solid var(--line)}
+.contact-item small{display:block;color:var(--muted)}
+.contact-item b{color:#dff5ff}
+form{display:grid;gap:12px}
+label{font-size:13px;color:#c8d9e9}
+input,textarea,select{width:100%;padding:13px;background:#081a2e;border:1px solid var(--line);border-radius:10px;color:white;font:inherit}
+textarea{min-height:120px;resize:vertical}
+.notice{font-size:12px;color:var(--muted)}
+.status{font-size:13px;color:#9be7ff}
+.qa-list{display:grid;gap:15px;margin-top:25px}
+.qa-item{padding:20px;background:#0b1e33;border:1px solid var(--line);border-radius:15px}
+.qa-item p{color:var(--muted);white-space:pre-wrap}
+.answer-box{margin-top:15px;padding:15px;border-radius:12px;background:#0b3049;border:1px solid #39c5f333}
+.answer-box h4{margin:0 0 8px;color:#9be7ff}
+.cta{background:linear-gradient(120deg,#103d60,#0c2742);border:1px solid #39c5f344;border-radius:22px;padding:30px;text-align:center}
+.cta p{color:#c1d8e9}
+footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:13px}
+.footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.powered{color:#8cddfb;font-weight:bold}
+.privacy{color:var(--muted);font-size:13px}
+.hidden{display:none!important}
+.admin-wrap{display:grid;gap:20px}
+.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.admin-question{border:1px solid var(--line);padding:17px;border-radius:13px;margin-top:13px}
+.admin-question textarea{min-height:90px}
+.admin-actions{display:flex;gap:10px;flex-wrap:wrap}
+.danger{background:#5c1d2c;border:1px solid #9e4055;color:white}
+#admin{display:none!important}
+#admin.admin-route-open{display:block!important}
+#adminLogin{display:none!important}
+#admin.admin-route-open #adminLogin.login-visible{display:block!important}
+#adminPanel{display:none!important}
+#adminPanel.admin-authorized{display:block!important}
+
+@media(max-width:800px){
+.links{display:none;position:absolute;top:78px;left:0;right:0;background:#091a2d;padding:20px 5%;flex-direction:column;align-items:flex-start}
+.links.open{display:flex}
+.menu-btn{display:block}
+.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+.services{grid-template-columns:repeat(2,1fr)}
+.values{grid-template-columns:1fr}
+.admin-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+.services,.product-grid{grid-template-columns:1fr}
+.hero{padding:55px 0}
+section{padding:50px 0}
+.brand-name{font-size:11px}
+.logo-svg{width:45px;height:45px}
+}
+</style>
+</head>
+
+<body>
+<header class="topbar">
+<div class="container nav">
+<a class="brand" href="#home">
+<svg class="logo-svg" viewBox="0 0 120 120" aria-label="CTC Logo">
+<defs><linearGradient id="ctcGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#39c5f3"/><stop offset="100%" stop-color="#2585dc"/></linearGradient></defs>
+<rect x="3" y="3" width="114" height="114" rx="27" fill="url(#ctcGrad)"/>
+<text x="60" y="68" text-anchor="middle" font-family="Arial" font-size="31" font-weight="900" fill="#06223a">CTC</text>
+</svg>
+<span class="brand-name">CHOWDHURY TECHNOLOGY<small>COMPANY</small></span>
+</a>
+<button class="menu-btn" id="menuBtn" type="button">☰</button>
+<nav class="links" id="navLinks">
+<a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a>
+<a href="#products">Products</a><a href="#projects">Projects</a>
+<a href="#questions">Q&A</a><a href="#contact">Contact</a>
+<a href="#ctc-admin" id="adminMenuLink" class="hidden">Admin Dashboard</a>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div>
+<span class="eyebrow">TECHNOLOGY · INNOVATION · DIGITAL SOLUTIONS</span>
+<h1>Technology for a <span class="gradient">Better Future.</span></h1>
+<p class="lead" id="heroDescription">Chowdhury Technology Company (CTC) is a technology-focused company working on software development, website development, Excel Data Entry and modern digital solutions.</p>
+<div class="actions"><a href="#services" class="btn btn-primary">Explore Services</a><a href="#about" class="btn">About CTC</a></div>
+</div>
+<div class="hero-card">
+<div class="hero-mark">
+<svg class="logo-svg" viewBox="0 0 120 120">
+<defs><linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#39c5f3"/><stop offset="100%" stop-color="#2585dc"/></linearGradient></defs>
+<rect x="3" y="3" width="114" height="114" rx="27" fill="url(#heroGrad)"/>
+<text x="60" y="68" text-anchor="middle" font-family="Arial" font-size="31" font-weight="900" fill="#06223a">CTC</text>
+</svg>
+</div>
+<p>Innovating Today, Building Tomorrow.</p>
+</div>
+</div>
+</section>
+
+<section id="about"><div class="container">
+<div class="section-head"><span class="kicker">WHO WE ARE</span><h2>About CTC</h2><p>Our goal is to make technology simple and useful.</p></div>
+<div class="about-grid">
+<div class="card"><h3>Our Introduction</h3><p>Chowdhury Technology Company (CTC) is a technology-focused initiative. We aim to develop software, websites and digital solutions that make everyday work easier for individuals and businesses.</p></div>
+<div class="card"><h3>Our Mission</h3><p>Our mission is to build useful, user-friendly and reliable technology products and grow into a trusted technology brand.</p></div>
+</div>
+<div class="values">
+<div class="value"><b>Innovation</b><span>New ideas and technology.</span></div>
+<div class="value"><b>Quality</b><span>Quality products and services.</span></div>
+<div class="value"><b>Trust</b><span>Security and customer trust.</span></div>
+</div>
+</div></section>
+
+<section id="services"><div class="container">
+<div class="section-head"><span class="kicker">WHAT WE DO</span><h2>Our Services</h2><p>Digital services for modern technology needs.</p></div>
+<div class="services">
+<div class="card service-card"><div class="service-icon">⌨</div><h3>Software Development</h3><p>Custom software solutions designed for business and organizational needs.</p></div>
+<div class="card service-card"><div class="service-icon">◎</div><h3>Website Development</h3><p>Modern, responsive and user-friendly website development.</p></div>
+<div class="card service-card"><div class="service-icon">▣</div><h3>Mobile App Solutions</h3><p>Mobile application solutions for different digital needs.</p></div>
+<div class="card service-card"><div class="service-icon">✧</div><h3>Digital Solutions</h3><p>Technology-based solutions to improve everyday business processes.</p></div>
+<div class="card service-card"><div class="service-icon">◈</div><h3>UI/UX Design</h3><p>Simple, modern and user-friendly interface design.</p></div>
+<div class="card service-card"><div class="service-icon">⚙</div><h3>Maintenance & Support</h3><p>Website and software maintenance and technical support.</p></div>
+<div class="card service-card"><div class="service-icon">📊</div><h3>Excel Data Entry</h3><p>Accurate data entry, spreadsheet formatting, data organization and record management.</p></div>
+</div>
+</div></section>
+
+<section id="products"><div class="container">
+<div class="section-head"><span class="kicker">OUR PRODUCTS</span><h2>Products by CTC</h2><p>Our technology products and initiatives.</p></div>
+<div class="product-grid">
+<div class="card"><span class="product-tag">IN DEVELOPMENT</span><h3>MyAIChat</h3><p>An AI-powered chat application designed to help users get answers to their questions.</p></div>
+<div class="card"><span class="product-tag">IN DEVELOPMENT</span><h3>Bizora</h3><p>Business management software initiative for accounting, customers, invoices and business records.</p></div>
+</div>
+<p class="notice">Product features and availability may change.</p>
+</div></section>
+
+<section id="projects"><div class="container">
+<div class="section-head"><span class="kicker">OUR WORK</span><h2>Projects & Portfolio</h2><p>Our projects and work will be showcased here.</p></div>
+<div class="project-note">New projects will be added here when ready for publication.<br><strong>Powered by CTC.</strong></div>
+</div></section>
+
+<!-- VISITOR QUESTIONS -->
+
+
+<section id="contact"><div class="container">
+<div class="section-head"><span class="kicker">GET IN TOUCH</span><h2>Contact CTC</h2><p>Tell us about your technology needs.</p></div>
+<div class="contact-grid">
+<div class="card"><h3>Contact Information</h3>
+<div class="contact-item"><small>Company</small><b>Chowdhury Technology Company</b></div>
+<div class="contact-item"><small>Location</small><b id="contactLocation">Chattogram, Bangladesh</b></div>
+<div class="contact-item"><small>Email</small><b id="contactEmail">Official email coming soon</b></div>
+<div class="contact-item"><small>Phone / WhatsApp</small><b id="contactPhone">Contact number coming soon</b></div>
+</div>
+<div class="card"><h3>Send an Inquiry</h3>
+<form id="contactForm">
+<div><label for="name">Your Name</label><input id="name" required maxlength="80"></div>
+<div><label for="email">Your Email</label><input id="email" type="email" required maxlength="120"></div>
+<div><label for="subject">Subject</label><input id="subject" required maxlength="120"></div>
+<div><label for="message">Message</label><textarea id="message" required maxlength="1500"></textarea></div>
+<button class="btn btn-primary" type="submit">Prepare Email</button>
+<p class="status" id="formStatus"></p>
+</form>
+</div>
+</div>
+</div></section>
+
+<section><div class="container"><div class="cta"><span class="kicker">POWERED BY CTC</span><h2>Let's Build Something Better.</h2><p>Let's create new possibilities through technology.</p><a href="#contact" class="btn btn-primary">Contact Us</a></div></div></section>
+
+<section id="privacy"><div class="container">
+<div class="section-head"><span class="kicker">INFORMATION</span><h2>Privacy Notice</h2></div>
+<div class="card privacy">Questions submitted through the Questions & Answers section are stored through Firebase. Visitors can view only their own questions and answers. Administrators can access questions to respond. Please do not submit passwords or sensitive personal information.</div>
+</div></section>
+
+<!-- PRIVATE ADMIN -->
+<section id="admin"><div class="container">
+<div class="section-head"><span class="kicker">AUTHORIZED ACCESS</span><h2>CTC Admin Dashboard</h2><p>Administrator access only.</p></div>
+<div class="card admin-wrap">
+<div id="adminLogin">
+<h3>Admin Login</h3>
+<form id="adminLoginForm">
+<div><label for="adminEmail">Admin Email</label><input type="email" id="adminEmail" required placeholder="Admin email"></div>
+<div><label for="adminPassword">Password</label><input type="password" id="adminPassword" required placeholder="Admin password"></div>
+<button class="btn btn-primary" type="submit">Login</button>
+<p class="status" id="adminLoginStatus"></p>
+</form>
+</div>
+
+<div id="adminPanel">
+<div class="admin-actions">
+<button class="btn" id="adminLogout" type="button">Logout</button>
+<button class="btn" id="refreshQuestions" type="button">Refresh Questions</button>
+</div>
+<hr style="border-color:var(--line);margin:25px 0">
+<h3>Website Settings</h3>
+<form id="settingsForm">
+<div><label for="settingHero">Home Description</label><textarea id="settingHero" maxlength="500"></textarea></div>
+<div class="admin-grid">
+<div><label for="settingEmail">Contact Email</label><input id="settingEmail" type="email" placeholder="Official email"></div>
+<div><label for="settingPhone">Phone / WhatsApp</label><input id="settingPhone" placeholder="Contact number"></div>
+</div>
+<div><label for="settingLocation">Location</label><input id="settingLocation" placeholder="Location"></div>
+<button class="btn btn-primary" type="submit">Save Website Settings</button>
+<p class="status" id="settingsStatus"></p>
+</form>
+<hr style="border-color:var(--line);margin:25px 0">
+<h3>Visitor Questions</h3>
+<p class="muted">Answers are visible only to the visitor who submitted each question.</p>
+<div id="adminQuestions" class="qa-list"></div>
+</div>
+</div>
+</div></section>
+</main>
+
+<footer><div class="container footer-row">
+<div><strong>CHOWDHURY TECHNOLOGY COMPANY</strong><br>© <span id="year"></span> CTC. All rights reserved.</div>
+<div class="powered">POWERED BY CTC.</div>
+</div></footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<script>
+// ==========================================
+// FIREBASE CONFIGURATION
+// নিজের Firebase Web App config বসাবে
+// ==========================================
+const firebaseConfig = {
+  apiKey: "AIzaSyAt2smDFxFz_gZAocd72CsbSZedorBzGlc",
+  authDomain: "ctc-official-website.firebaseapp.com",
+  projectId: "ctc-official-website",
+  storageBucket: "ctc-official-website.firebasestorage.app",
+  messagingSenderId: "190290272048",
+  appId: "1:190290272048:web:eb1a068ce32b44b533f2f5"
+};
+};
+
+// শুধু তোমার Admin Firebase UID বসাবে
+const ADMIN_UID = "GiSA8vT2sWf7KbJeHMVNRMQCU8u2";
+
+// Official email পরে বসাবে
+let CTC_EMAIL = "";
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+const adminLink = document.getElementById("adminMenuLink");
+const adminSection = document.getElementById("admin");
+const adminLogin = document.getElementById("adminLogin");
+const adminPanel = document.getElementById("adminPanel");
+
+let auth = null;
+let db = null;
+let currentUser = null;
+let firebaseReady = false;
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+menuBtn.addEventListener("click", () => navLinks.classList.toggle("open"));
+navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => navLinks.classList.remove("open")));
+
+function showStatus(id, message){
+  const el = document.getElementById(id);
+  if(el) el.textContent = message;
+}
+
+function escapeHTML(value){
+  return String(value || "").replace(/[&<>"']/g, c => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  })[c]);
+}
+
+function isAdmin(){
+  return !!currentUser &&
+    !currentUser.isAnonymous &&
+    ADMIN_UID !== "YOUR_ADMIN_UID" &&
+    currentUser.uid === ADMIN_UID;
+}
+
+function updateAdminMenu(){
+  if(adminLink) adminLink.classList.toggle("hidden", !isAdmin());
+}
+
+function configIsReady(){
+  return firebaseConfig.apiKey !== "YOUR_API_KEY" &&
+    firebaseConfig.projectId !== "YOUR_PROJECT_ID" &&
+    ADMIN_UID !== "YOUR_ADMIN_UID";
+}
+
+function applySettings(s){
+  if(s.heroDescription) document.getElementById("heroDescription").textContent = s.heroDescription;
+  if(s.email){
+    document.getElementById("contactEmail").textContent = s.email;
+    CTC_EMAIL = s.email;
+  }
+  if(s.phone) document.getElementById("contactPhone").textContent = s.phone;
+  if(s.location) document.getElementById("contactLocation").textContent = s.location;
+}
+
+async function loadSettings(){
+  if(!isAdmin()) return;
+  try{
+    const doc = await db.collection("settings").doc("website").get();
+    if(doc.exists){
+      const s = doc.data();
+      document.getElementById("settingHero").value = s.heroDescription || "";
+      document.getElementById("settingEmail").value = s.email || "";
+      document.getElementById("settingPhone").value = s.phone || "";
+      document.getElementById("settingLocation").value = s.location || "";
+      applySettings(s);
+    }
+  }catch(e){
+    showStatus("settingsStatus","Could not load settings.");
+  }
+}
+
+async function loadMyQuestions(){
+  if(!currentUser || !currentUser.isAnonymous) return;
+  const container = document.getElementById("myQuestions");
+  try{
+    const snap = await db.collection("questions")
+      .where("uid","==",currentUser.uid).get();
+
+    if(snap.empty){
+      container.innerHTML = "<p class='notice'>You have not submitted any questions yet.</p>";
+      return;
+    }
+
+    const docs = snap.docs.slice().sort((a,b) => {
+      const ta = a.data().createdAt?.toMillis?.() || 0;
+      const tb = b.data().createdAt?.toMillis?.() || 0;
+      return tb-ta;
+    });
+
+    container.innerHTML = docs.map(doc => {
+      const d = doc.data();
+      return `<div class="qa-item">
+        <strong>Your Question</strong>
+        <p>${escapeHTML(d.question)}</p>
+        <div class="answer-box">
+          <h4>${d.answered ? "CTC Answer" : "Awaiting Answer"}</h4>
+          <p>${d.answered ? escapeHTML(d.answer) : "Your question has been received. Please check again later."}</p>
+        </div>
+      </div>`;
+    }).join("");
+  }catch(e){
+    container.innerHTML = "<p class='notice'>Could not load your questions.</p>";
+  }
+}
+
+document.getElementById("questionForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  if(!firebaseReady || !currentUser || !currentUser.isAnonymous){
+    showStatus("questionStatus","Please wait for visitor login to finish and try again.");
+    return;
+  }
+
+  const name = document.getElementById("visitorName").value.trim();
+  const question = document.getElementById("visitorQuestion").value.trim();
+  if(!name || !question) return;
+
+  try{
+    await db.collection("questions").add({
+      uid: currentUser.uid,
+      name,
+      question,
+      answer:"",
+      answered:false,
+      createdAt:firebase.firestore.FieldValue.serverTimestamp()
+    });
+    document.getElementById("visitorQuestion").value = "";
+    showStatus("questionStatus","Your question has been submitted.");
+    loadMyQuestions();
+  }catch(error){
+    showStatus("questionStatus","Question could not be submitted. Please check Firebase Rules.");
+  }
+});
+
+async function loadAdminQuestions(){
+  if(!isAdmin()) return;
+  const container = document.getElementById("adminQuestions");
+  try{
+    const snap = await db.collection("questions").orderBy("createdAt","desc").get();
+    if(snap.empty){
+      container.innerHTML = "<p class='notice'>No questions have been submitted yet.</p>";
+      return;
+    }
+
+    container.innerHTML = snap.docs.map(doc => {
+      const d = doc.data();
+      return `<div class="admin-question" data-id="${escapeHTML(doc.id)}">
+        <strong>Visitor: ${escapeHTML(d.name)}</strong>
+        <p>${escapeHTML(d.question)}</p>
+        <label>Answer</label>
+        <textarea class="answerInput" placeholder="Write your answer...">${escapeHTML(d.answer || "")}</textarea>
+        <div class="admin-actions" style="margin-top:10px">
+          <button class="btn btn-primary answerBtn" type="button">Save Answer</button>
+          <button class="btn danger deleteBtn" type="button">Delete</button>
+        </div>
+        <p class="notice">${d.answered ? "Answered" : "Pending"}</p>
+      </div>`;
+    }).join("");
+
+    container.querySelectorAll(".answerBtn").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        if(!isAdmin()) return;
+        const box = btn.closest(".admin-question");
+        const answer = box.querySelector(".answerInput").value.trim();
+        if(!answer){ alert("Please enter an answer."); return; }
+        try{
+          await db.collection("questions").doc(box.dataset.id).update({
+            answer, answered:true,
+            answeredAt:firebase.firestore.FieldValue.serverTimestamp()
+          });
+          alert("Answer saved successfully.");
+          loadAdminQuestions();
+        }catch(e){ alert("Could not save answer. Check Firestore Rules."); }
+      });
+    });
+
+    container.querySelectorAll(".deleteBtn").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        if(!isAdmin() || !confirm("Delete this question?")) return;
+        const box = btn.closest(".admin-question");
+        try{
+          await db.collection("questions").doc(box.dataset.id).delete();
+          loadAdminQuestions();
+        }catch(e){ alert("Delete failed. Check Firestore Rules."); }
+      });
+    });
+  }catch(e){
+    container.innerHTML = "<p class='notice'>Unable to load questions. Check Firestore Rules.</p>";
+  }
+}
+
+document.getElementById("settingsForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  if(!isAdmin()){
+    showStatus("settingsStatus","Administrator access required.");
+    return;
+  }
+
+  const settings = {
+    heroDescription:document.getElementById("settingHero").value.trim(),
+    email:document.getElementById("settingEmail").value.trim(),
+    phone:document.getElementById("settingPhone").value.trim(),
+    location:document.getElementById("settingLocation").value.trim()
+  };
+
+  try{
+    await db.collection("settings").doc("website").set(settings);
+    applySettings(settings);
+    showStatus("settingsStatus","Website settings saved successfully.");
+  }catch(e){
+    showStatus("settingsStatus","Settings could not be saved. Check Firestore Rules.");
+  }
+});
+
+document.getElementById("adminLoginForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  if(location.hash !== "#ctc-admin" || !firebaseReady) return;
+
+  try{
+    const email = document.getElementById("adminEmail").value.trim();
+    const password = document.getElementById("adminPassword").value;
+    const result = await auth.signInWithEmailAndPassword(email,password);
+
+    if(result.user.uid !== ADMIN_UID){
+      await auth.signOut();
+      showStatus("adminLoginStatus","This account is not authorized.");
+      return;
+    }
+
+    currentUser = result.user;
+    updateAdminMenu();
+    checkAdminRoute();
+    showStatus("adminLoginStatus","Login successful.");
+  }catch(error){
+    showStatus("adminLoginStatus","Login failed. Check your email and password.");
+  }
+});
+
+document.getElementById("adminLogout").addEventListener("click", async () => {
+  await auth.signOut();
+  currentUser = null;
+  updateAdminMenu();
+  checkAdminRoute();
+});
+
+document.getElementById("refreshQuestions").addEventListener("click",loadAdminQuestions);
+
+function checkAdminRoute(){
+  const onRoute = location.hash === "#ctc-admin";
+  adminSection.classList.toggle("admin-route-open",onRoute);
+
+  if(!onRoute){
+    adminLogin.classList.remove("login-visible");
+    adminPanel.classList.remove("admin-authorized");
+    return;
+  }
+
+  if(isAdmin()){
+    adminLogin.classList.remove("login-visible");
+    adminPanel.classList.add("admin-authorized");
+    loadAdminQuestions();
+    loadSettings();
+  }else{
+    adminPanel.classList.remove("admin-authorized");
+    adminLogin.classList.add("login-visible");
+  }
+}
+
+window.addEventListener("hashchange",checkAdminRoute);
+
+document.getElementById("contactForm").addEventListener("submit",e => {
+  e.preventDefault();
+  if(!CTC_EMAIL){
+    showStatus("formStatus","CTC official email has not been configured yet.");
+    return;
+  }
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const subject = document.getElementById("subject").value.trim();
+  const message = document.getElementById("message").value.trim();
+  const body = "Name: "+name+"\nEmail: "+email+"\n\n"+message;
+  window.location.href = "mailto:"+CTC_EMAIL+
+    "?subject="+encodeURIComponent(subject)+
+    "&body="+encodeURIComponent(body);
+  showStatus("formStatus","Opening your email application...");
+});
+
+function initFirebase(){
+  if(!configIsReady()){
+    showStatus("questionStatus","Please configure Firebase settings first.");
+    return;
+  }
+
+  try{
+    firebase.initializeApp(firebaseConfig);
+    auth = firebase.auth();
+    db = firebase.firestore();
+    firebaseReady = true;
+
+    auth.onAuthStateChanged(async user => {
+      currentUser = user;
+      updateAdminMenu();
+      checkAdminRoute();
+
+      if(isAdmin()){
+        loadAdminQuestions();
+        loadSettings();
+        return;
+      }
+
+      if(!user && location.hash !== "#ctc-admin"){
+        try{ await auth.signInAnonymously(); }
+        catch(e){ showStatus("questionStatus","Unable to connect to Firebase."); }
+        return;
+      }
+
+      if(user && user.isAnonymous){
+        loadMyQuestions();
+      }
+    });
+  }catch(error){
+    showStatus("questionStatus","Firebase initialization failed. Check your configuration.");
+  }
+}
+
+checkAdminRoute();
+initFirebase();
+</script>
+</body>
+</html>
